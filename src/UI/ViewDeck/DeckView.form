@@ -11,7 +11,7 @@
     </properties>
     <border type="none"/>
     <children>
-      <grid id="74bfa" binding="ButtonPanel" layout-manager="FlowLayout" hgap="100" vgap="5" flow-align="1">
+      <grid id="74bfa" binding="ButtonPanel" layout-manager="FlowLayout" hgap="20" vgap="5" flow-align="1">
         <constraints>
           <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
           <gridbag weightx="0.0" weighty="0.0"/>
@@ -30,7 +30,9 @@
               <background color="-13355980"/>
               <font name="Times New Roman"/>
               <foreground color="-13355980"/>
-              <text value="Delete"/>
+              <horizontalAlignment value="0"/>
+              <horizontalTextPosition value="2"/>
+              <text value="Delete Card"/>
             </properties>
           </component>
           <component id="7ea5" class="javax.swing.JButton" binding="Add">
@@ -39,7 +41,30 @@
               <background color="-13355980"/>
               <font name="Times New Roman"/>
               <foreground color="-13355980"/>
-              <text value="Add"/>
+              <text value="Add Card"/>
+            </properties>
+          </component>
+          <hspacer id="9f64e">
+            <constraints/>
+          </hspacer>
+          <hspacer id="5096d">
+            <constraints/>
+          </hspacer>
+          <hspacer id="c298b">
+            <constraints/>
+          </hspacer>
+          <hspacer id="b5453">
+            <constraints/>
+          </hspacer>
+          <hspacer id="c95b7">
+            <constraints/>
+          </hspacer>
+          <component id="82386" class="javax.swing.JButton" binding="StartPractice">
+            <constraints/>
+            <properties>
+              <font name="Times New Roman"/>
+              <foreground color="-13355980"/>
+              <text value="Start Practicing!"/>
             </properties>
           </component>
         </children>
@@ -47,10 +72,10 @@
       <grid id="1198b" binding="ScrollPanel" layout-manager="FlowLayout" hgap="0" vgap="100" flow-align="1">
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
-          <gridbag weightx="0.5" weighty="0.5"/>
+          <gridbag weightx="100.0" weighty="100.0" ipadx="100" ipady="100"/>
         </constraints>
         <properties>
-          <foreground color="-11513776"/>
+          <foreground color="-1"/>
         </properties>
         <border type="none"/>
         <children/>
