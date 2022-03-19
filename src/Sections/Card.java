@@ -1,4 +1,6 @@
 package Sections;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 // one flashcard 
 public class Card { 
@@ -27,4 +29,13 @@ public class Card {
     public int getLevel() { 
         return level; 
     }
+
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("Question", question);
+        json.put("Answer", answer);
+        json.put("Level", level);
+        return json;
+    }
+
 }
