@@ -46,14 +46,20 @@ public class Deck {
         DeckName = name;
     }
 
-    // public JSONObject toJsonDeck() {
-    //     JSONObject json = new JSONObject();
-    //     json.put("DeckName", DeckName);
-    //     json.put("Deck", arrayToJson());
-    //     return json;
-    // }   
+    public JSONObject toJsonDeck() {
+        JSONObject json = new JSONObject();
+        json.put("DeckName", DeckName);
+        json.put("Deck", arrayToJson());
+        return json;
+    }   
 
-    // public void arrayToJson() {
+    public JSONArray arrayToJson() {
+        JSONArray arr = new JSONArray();
 
-    // }
+        for (Card c : deck) {
+            arr.put(c.toJson());
+        }
+
+        return arr;
+    }
 }

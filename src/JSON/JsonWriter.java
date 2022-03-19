@@ -1,14 +1,7 @@
 package JSON;
-import org.json.JSONArray;
+import Sections.*;
 import org.json.JSONObject;
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.text.ParseException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Stream;
+import java.io.*;
 
 public class JsonWriter {
     private static final int TAB = 4;
@@ -20,7 +13,7 @@ public class JsonWriter {
         this.destination = destination;
     }
 
-    public void open() {
+    public void open() throws FileNotFoundException {
         writer = new PrintWriter(new File(destination));
     }
 
