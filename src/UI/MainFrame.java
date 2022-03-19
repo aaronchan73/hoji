@@ -53,6 +53,7 @@ public class MainFrame implements ActionListener {
         mainFrame.add(mainPanel);
         mainFrame.setVisible(true);
         mainFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+
     }
 
     public void initQA() {
@@ -111,15 +112,17 @@ public class MainFrame implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == correct) {
-            // deck.getNextCard();
-            // deck.
-        } else if (e.getSource() == wrong) {
-            // WRONG
-        } else if (e.getSource() == start) {
-           pomo.startTimer();
-        } else if (e.getSource() == pause) {
-            pomo.stopTimer();
+        if (!pomo.doneTimer()) {
+            if (e.getSource() == correct) {
+                loadedDeck.getNextCard();
+            } else if (e.getSource() == wrong) {
+                loadedDeck.addCard(loadedDeck.getCard());
+                loadedDeck.getNextCard();
+            } else if (e.getSource() == start) {
+                pomo.startTimer();
+            } else if (e.getSource() == pause) {
+                pomo.stopTimer();
+            }
         }
     }
 
