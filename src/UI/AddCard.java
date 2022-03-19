@@ -1,6 +1,7 @@
 package UI;
 
 import javax.swing.*;
+import java.awt.Color;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -26,6 +27,7 @@ public class AddCard implements ActionListener{
     public void initPanel(){
         panel = new JPanel();
         panel.setLayout(new GridBagLayout());
+        panel.setBackground(new Color(52,52,52));
 
     }
 
@@ -36,6 +38,7 @@ public class AddCard implements ActionListener{
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setSize(500, 500);
         frame.setLocationRelativeTo(null);
+        frame.getContentPane().setBackground(Color.DARK_GRAY);
         frame.add(panel);
         frame.setVisible(true);
         panel.setVisible(true);
@@ -87,12 +90,16 @@ public class AddCard implements ActionListener{
     
     public void initLabels(){
         questionLabel = new JLabel("Question:");
+        //questionLabel.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+        questionLabel.setForeground(Color.WHITE);
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
         c.gridy = 0;
         panel.add(questionLabel,c);
 
         answerLabel = new JLabel("Answer: ");
+       // answerLabel.setFont(new Font("Times New Roman", Font.PLAIN, 14));
+        answerLabel.setForeground(Color.WHITE);
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
         c.gridy = 1;
