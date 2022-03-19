@@ -16,7 +16,7 @@ public class PomoTimer {
     private String doubleSeconds;
     private boolean on;
 
-    private JLabel label;
+    public JLabel label;
     private TimerTask task;
     private DecimalFormat decimalFormat;
 
@@ -26,7 +26,7 @@ public class PomoTimer {
     }
 
     public void initLabel() {
-        label = new JLabel();
+        label = new JLabel("25:00");
     }
 
     public void initTimer() {
@@ -76,5 +76,9 @@ public class PomoTimer {
 
     public void startTimer() {
         on = true;
+    }
+
+    public boolean doneTimer() {
+        return minutes == 0 && seconds == 0;
     }
 }

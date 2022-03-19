@@ -4,7 +4,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.GridBagLayout;
 import Sections.*;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -25,6 +24,7 @@ public class MainFrame implements ActionListener {
     public static int HEIGHT = 500;
 
     private PomoTimer pomo;
+    private JLabel pomoLabel;
 
     private JPanel qaPanel;
     private JLabel question;
@@ -40,8 +40,8 @@ public class MainFrame implements ActionListener {
     public MainFrame() {
         initMainFrame();
         initQA();
-        initMainButtons();
         initPomoTimer();
+        initMainButtons();
     }
 
     public void initMainFrame() {
@@ -49,7 +49,7 @@ public class MainFrame implements ActionListener {
         mainFrame = new JFrame();
         mainFrame.setSize(WIDTH, HEIGHT);
         mainPanel = new JPanel();
-        mainPanel.setLayout(new GridLayout(2, 1));
+        mainPanel.setLayout(new GridLayout(3, 1));
         mainFrame.add(mainPanel);
         mainFrame.setVisible(true);
         mainFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -105,15 +105,19 @@ public class MainFrame implements ActionListener {
 
     public void initPomoTimer() {
         pomo = new PomoTimer();
+        pomoLabel = pomo.label;
+        pomoLabel.setHorizontalAlignment(JLabel.CENTER);
+        mainPanel.add(pomoLabel);
     }
 
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == correct) {
             // deck.getNextCard();
+            // deck.
         } else if (e.getSource() == wrong) {
             // WRONG
         } else if (e.getSource() == start) {
-            pomo.startTimer();
+           pomo.startTimer();
         } else if (e.getSource() == pause) {
             pomo.stopTimer();
         }
