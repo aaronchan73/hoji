@@ -1,11 +1,17 @@
 package UI; 
-import javax.swing.*;
-import java.awt.*;
+import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.WindowConstants;
 
 public class StartFrame implements ActionListener {
 
@@ -13,7 +19,7 @@ public class StartFrame implements ActionListener {
     public static int HEIGHT = 500;
 
     public JFrame startFrame;
-    public ViewDeck viewDeck; 
+    //public ViewDeck viewDeck; 
     private JButton start; 
     private BufferedImage startBackground; 
     private JLabel startBackgroundLabel; 
@@ -28,7 +34,7 @@ public class StartFrame implements ActionListener {
         startFrame.setVisible(true);
         startFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         startFrame.setSize(WIDTH, HEIGHT); 
-        initStartButtons(); 
+        //initStartButtons(); 
 
         try { // background image 
             startBackground = ImageIO.read(new File("./startBackground.png"));
@@ -47,11 +53,11 @@ public class StartFrame implements ActionListener {
     } 
 
     public void actionPerformed(ActionEvent e) {
-		if (e.getSource() == start) {
-            startFrame.setVisible(false); 
-            viewDeck = new ViewDeck(); 
-            viewDeck.viewDeck.setVisible(true); 
-	    }
+		// if (e.getSource() == start) {
+        //     startFrame.setVisible(false); 
+        //     viewDeck = new ViewDeck(); 
+        //     viewDeck.viewDeck.setVisible(true); 
+	    // }
     }
 
 

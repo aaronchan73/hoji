@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="DeckView">
+  <grid id="27dc6" binding="panel1" default-binding="true" layout-manager="GridBagLayout">
+    <constraints>
+      <xy x="93" y="95" width="1156" height="649"/>
+    </constraints>
+    <properties>
+      <background color="-13355980"/>
+      <enabled value="true"/>
+      <foreground color="-13355980"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <grid id="74bfa" binding="ButtonPanel" layout-manager="FlowLayout" hgap="100" vgap="5" flow-align="1">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <background color="-13355980"/>
+          <enabled value="false"/>
+          <font name="Courier"/>
+          <foreground color="-13355980"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="e3f20" class="javax.swing.JButton" binding="Delete">
+            <constraints/>
+            <properties>
+              <background color="-13355980"/>
+              <font name="Times New Roman"/>
+              <foreground color="-13355980"/>
+              <text value="Delete"/>
+            </properties>
+          </component>
+          <component id="7ea5" class="javax.swing.JButton" binding="Add">
+            <constraints/>
+            <properties>
+              <background color="-13355980"/>
+              <font name="Times New Roman"/>
+              <foreground color="-13355980"/>
+              <text value="Add"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="1198b" binding="ScrollPanel" layout-manager="FlowLayout" hgap="0" vgap="100" flow-align="1">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.5" weighty="0.5"/>
+        </constraints>
+        <properties>
+          <foreground color="-11513776"/>
+        </properties>
+        <border type="none"/>
+        <children/>
+      </grid>
+    </children>
+  </grid>
+</form>
