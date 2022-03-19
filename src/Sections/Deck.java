@@ -20,6 +20,8 @@ public class Deck {
 
     public Deck(String name) {
         this.name = name;
+        deck = new ArrayList<>();
+        indexDeck = 0;
     }
 
     // add card to deck

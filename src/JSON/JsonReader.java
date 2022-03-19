@@ -14,12 +14,10 @@ import java.util.stream.Stream;
 public class JsonReader {
     private String source;
 
-    //EFFECTS: constructor
     public JsonReader(String source) {
         this.source = source;
     }
 
-    // EFFECTS: reads source file as string and returns it
     private String readFile(String source) throws IOException {
         StringBuilder contentBuilder = new StringBuilder();
 

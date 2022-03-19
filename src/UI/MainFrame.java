@@ -28,11 +28,12 @@ public class MainFrame implements ActionListener {
 
     private JPanel qaPanel;
     private JLabel question;
-    String questionString = "Who is Alvin Zhou?";
+    String questionString;
     private JLabel answer;
-    String answerString = "Cool guy hahahaha";
+    String answerString;
 
     private Deck loadedDeck;
+    private Card card;
     private static final String JSON_Save = "./data/data.json";
     JsonWriter jsonWriter = new JsonWriter(JSON_Save);
     JsonReader jsonReader = new JsonReader(JSON_Save);
@@ -45,7 +46,7 @@ public class MainFrame implements ActionListener {
     }
 
     public void initMainFrame() {
-        // loadDeck();
+        loadDeck();
         mainFrame = new JFrame();
         mainFrame.setSize(WIDTH, HEIGHT);
         mainPanel = new JPanel();
@@ -112,24 +113,32 @@ public class MainFrame implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) {
-        if (!pomo.doneTimer()) {
+      //  if (!pomo.doneTimer()) {
             if (e.getSource() == correct) {
-                loadedDeck.getNextCard();
+                loadedDeck.removeCard(card);
+                card = loadedDeck.getNextCard();
+                questionString = card.getQuestion();
+                answerString = card.getAnswer();
+                question.setText(questionString);
+                answer.setText(answerString);
             } else if (e.getSource() == wrong) {
-                loadedDeck.addCard(loadedDeck.getCard());
-                loadedDeck.getNextCard();
+                card = loadedDeck.getNextCard();
+                questionString = card.getQuestion();
+                question.setText(questionString);
+                answerString = card.getAnswer();
+                answer.setText(answerString);
             } else if (e.getSource() == start) {
                 pomo.startTimer();
             } else if (e.getSource() == pause) {
                 pomo.stopTimer();
             }
-        }
+    //    }
     }
 
     public void loadDeck() {
         try {
             loadedDeck = jsonReader.readDeck();
-            System.out.println("Loaded Clothes from " + JSON_Save);
+            System.out.println("Loaded Deck from " + JSON_Save);
         } catch (IOException e) {
             System.out.println("Unable to read deck from file: " + JSON_Save);
         }
