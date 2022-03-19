@@ -6,13 +6,17 @@ import org.json.JSONObject;
 
 // deck of cards 
 public class Deck { 
-
+    String name;
     public List<Card> deck;
     private String DeckName; 
     
     // initializes a deck 
     public Deck() { 
         deck = new ArrayList<>(); 
+    }
+
+    public Deck(String name) {
+        this.name = name;
     }
 
     // add card to deck 
