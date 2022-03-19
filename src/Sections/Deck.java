@@ -1,11 +1,14 @@
 package Sections;  
 import java.util.ArrayList;
 import java.util.List;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 // deck of cards 
 public class Deck { 
 
-    public List<Card> deck; 
+    public List<Card> deck;
+    private String DeckName; 
     
     // initializes a deck 
     public Deck() { 
@@ -32,7 +35,21 @@ public class Deck {
     }
 
     public Card getNextCard(int index) {
-        return deck.get(index+1);
+        return deck.get(index + 1);
     }
-    
+
+    public void setDeckName(String name) {
+        DeckName = name;
+    }
+
+    // public JSONObject toJsonDeck() {
+    //     JSONObject json = new JSONObject();
+    //     json.put("DeckName", DeckName);
+    //     json.put("Deck", arrayToJson());
+    //     return json;
+    // }   
+
+    // public void arrayToJson() {
+
+    // }
 }

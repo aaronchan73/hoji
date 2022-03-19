@@ -10,6 +10,7 @@ import Sections.*;
 public class MainFrame implements ActionListener {
 
     public JFrame mainFrame;
+    public JPanel mainPanel;
     public Deck deck;
 
     private JButton correct;
@@ -19,67 +20,65 @@ public class MainFrame implements ActionListener {
     public static int WIDTH = 500;
     public static int HEIGHT = 500;
 
-    public JPanel mainPanel;
-
     private PomoTimer pomo;
 
 
     public MainFrame() {
         initMainFrame();
+        // initPomoTimer();
     }
 
     public void initMainFrame() {
         mainFrame = new JFrame();
+        mainFrame.setSize(WIDTH, HEIGHT);
         mainPanel = new JPanel(new GridBagLayout());
         mainFrame.add(mainPanel);
+        mainFrame.setVisible(true);
         mainFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        mainFrame.setSize(WIDTH, HEIGHT);
-
         initMainButtons();
     }
 
     public void initMainButtons() {
 
-        correct = new JButton("\u2705");
+        correct = new JButton("\u2713");
+        // correct = new JButton("Correct");
         correct.setSize(new Dimension(300, 300));
         correct.addActionListener(this);
         mainPanel.add(correct);
 
         wrong = new JButton("\u2716");
+        // wrong = new JButton("Wrong");
         wrong.setSize(new Dimension(300, 300));
         wrong.addActionListener(this);
-        mainPanel.add(correct);
+        mainPanel.add(wrong);
 
         start = new JButton("Start");
         start.setSize(new Dimension(300, 300));
         start.addActionListener(this);
-        mainPanel.add(correct);
+        mainPanel.add(start);
 
         pause = new JButton("Pause");
         pause.setSize(new Dimension(300, 300));
         pause.addActionListener(this);
-        mainPanel.add(correct);
+        mainPanel.add(pause);
 
     }
+
+    // public void initPomoTimer() {
+    //     pomo = new PomoTimer();
+    //     mainPanel.add(pomo);
+    // }
 
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == correct) {
-            // deck.getNextCard();
-        } else if (e.getSource() == wrong) {
-            // WRONG
-        } else if (e.getSource() == start) {
-            pomo.startTimer();
-        } else if (e.getSource() == pause) {
-            pomo.stopTimer();
-        }
+        // if (e.getSource() == correct) {
+        //     // deck.getNextCard();
+        // } else if (e.getSource() == wrong) {
+        //     // WRONG
+        // } else if (e.getSource() == start) {
+        //     pomo.startTimer();
+        // } else if (e.getSource() == pause) {
+        //     pomo.stopTimer();
+        // }
     }
 
-}
-
-class TimerActionListener implements ActionListener {
-    public void actionPerformed(ActionEvent e) {
-
-        System.out.println("test");
-
-    }
 }
