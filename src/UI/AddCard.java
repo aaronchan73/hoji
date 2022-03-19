@@ -7,30 +7,31 @@ import java.awt.event.ActionListener;
 import Sections.*;
 
 public class AddCard implements ActionListener{
-//fefefefefef
     public JFrame frame;
     public JFrame errorFrame;
+    public JPanel panel;
     private JButton addButton;
     private JTextField questionField;
     private JTextField answerField;
     private JComboBox level;
-    Deck deck = new Deck();
+    //Deck deck = new Deck();
 
     public AddCard() {
         initNewCardFrame();
     }
 
     public void initNewCardFrame() {
+        panel = new JPanel(new GridBagLayout());
         frame = new JFrame();
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setSize(500, 500);
         frame.setVisible(true);
-        errorFrame = new JFrame();
-        initNewCardFrame();
-        initTextFields();
-        initDropDown();
-        initNewCardButtons();
-        addElementsToPanel();
+        frame.add(panel);
+        // errorFrame = new JFrame();
+         initTextFields();
+         initDropDown();
+         initNewCardButtons();
+         addElementsToPanel();
     }
 
     public void initNewCardButtons() {
@@ -40,6 +41,8 @@ public class AddCard implements ActionListener{
     }
 
     public void initTextFields() {
+        questionField = new JTextField(20);
+        answerField = new JTextField(20);
         questionField.setText(null);
         answerField.setText(null);
     }
@@ -52,67 +55,67 @@ public class AddCard implements ActionListener{
     }
 
     public void addElementsToPanel() {
-        frame.add(addButton);
-        frame.add(questionField);
-        frame.add(answerField);
-        frame.add(level);
-        frame.add(level);
+        panel.add(addButton);
+        panel.add(questionField);
+        panel.add(answerField);
+        panel.add(level);
+        panel.add(level);
     }
 
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		if(e.getSource() == addButton){
-         checkTextFields();
-         addNewCard();	   
-        }
+// 	@Override
+// 	public void actionPerformed(ActionEvent e) {
+// 		if(e.getSource() == addButton){
+//          //checkTextFields();
+//          addNewCard();	   
+//         }
 		
-	}
+// 	}
     
-    // public void addButtonAction(){
-    //     addButton.addActionListener(new ActionListener(){
-	// 		@Override
-	// 		public void actionPerformed(ActionEvent e) {
-	// 		checkTextFields();
-    //         addNewCard();	
-	// 		}
+//     public void addButtonAction(){
+//         addButton.addActionListener(new ActionListener(){
+// 			@Override
+// 			public void actionPerformed(ActionEvent e) {
+// 			checkTextFields();
+//             addNewCard();	
+// 			}
             
-    //     });
-    // }
+//         });
+//     }
 
 
-private void errorWindow(String string){
-    JOptionPane.showMessageDialog(errorFrame,string);
-    initTextFields();
-}
+// private void errorWindow(String string){
+//     JOptionPane.showMessageDialog(errorFrame,string);
+//     initTextFields();
+// }
 
-private void checkTextFields(){
-    String question = questionField.getText();
-    String answer  = answerField.getText();
-    if(question.isEmpty()){
-        errorWindow("Please enter a valid question!");
-    }
-    if(answer.isEmpty()){
-        errorWindow("Please enter a valid answer!");
-    }
-    if(question.isEmpty() && answer.isEmpty()){
-        errorWindow("No question or answer entered!");
-    }
-}
+// private void checkTextFields(){
+//     String question = questionField.getText();
+//     String answer  = answerField.getText();
+//     if(question.isEmpty()){
+//         errorWindow("Please enter a valid question!");
+//     }
+//     if(answer.isEmpty()){
+//         errorWindow("Please enter a valid answer!");
+//     }
+//     if(question.isEmpty() && answer.isEmpty()){
+//         errorWindow("No question or answer entered!");
+//     }
+// }
 
-private void addNewCard(){
-    int levelNum = 0; 
-    if(level.getSelectedItem() == "Easy"){
-        levelNum = 1;
-    }
-    if(level.getSelectedItem() == "Medium"){
-        levelNum = 2;
-    }
-    if(level.getSelectedItem() == "Hard"){
-        levelNum = 3;
-    }
-    Card card = new Card(questionField.getText(), answerField.getText(), levelNum);
-    deck.addCard(card);
-}
+// private void addNewCard(){
+//     int levelNum = 0; 
+//     if(level.getSelectedItem() == "Easy"){
+//         levelNum = 1;
+//     }
+//     if(level.getSelectedItem() == "Medium"){
+//         levelNum = 2;
+//     }
+//     if(level.getSelectedItem() == "Hard"){
+//         levelNum = 3;
+//     }
+//     Card card = new Card(questionField.getText(), answerField.getText(), levelNum);
+//     //deck.addCard(card);
+// }
 
 
 }
