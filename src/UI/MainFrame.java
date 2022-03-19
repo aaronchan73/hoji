@@ -16,6 +16,7 @@ public class MainFrame implements ActionListener {
     public JPanel mainPanel;
 
     private JPanel buttonPanel;
+    private JButton showAnswer;
     private JButton correct;
     private JButton wrong;
     private JButton start;
@@ -66,6 +67,7 @@ public class MainFrame implements ActionListener {
         answer.setHorizontalAlignment(JLabel.CENTER);
         qaPanel.add(question);
         qaPanel.add(answer);
+        answer.setVisible(false);
         mainPanel.add(qaPanel);
     }
 
@@ -81,6 +83,11 @@ public class MainFrame implements ActionListener {
 
         buttonPanel = new JPanel();
         buttonPanel.setLayout(new FlowLayout());
+
+        showAnswer = new JButton("Answer");
+        showAnswer.setSize(new Dimension(300, 300));
+        showAnswer.addActionListener(this);
+        buttonPanel.add(showAnswer);
 
         correct = new JButton("\u2713");
         correct.setSize(new Dimension(300, 300));
@@ -121,12 +128,16 @@ public class MainFrame implements ActionListener {
                 answerString = card.getAnswer();
                 question.setText(questionString);
                 answer.setText(answerString);
+                answer.setVisible(false);
             } else if (e.getSource() == wrong) {
                 card = loadedDeck.getNextCard();
                 questionString = card.getQuestion();
                 question.setText(questionString);
                 answerString = card.getAnswer();
                 answer.setText(answerString);
+                answer.setVisible(false);
+            } else if (e.getSource() == showAnswer) {
+                answer.setVisible(true);
             } else if (e.getSource() == start) {
                 pomo.startTimer();
             } else if (e.getSource() == pause) {
