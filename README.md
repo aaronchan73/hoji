@@ -4,11 +4,11 @@
 
 A pomodoro-style flashcard app made in Java. 
 
-![alt text](https://github.com/aaronchan73/hoji/blob/main/start.png)
+<img src="https://github.com/aaronchan73/hoji/blob/main/start.png" width=200 height=200>
 
-![alt text](https://github.com/aaronchan73/hoji/blob/main/main.png)
+<img src="https://github.com/aaronchan73/hoji/blob/main/main.png" width=200 height=200>
 
-![alt text](https://github.com/aaronchan73/hoji/blob/main/add.png)
+<img src="https://github.com/aaronchan73/hoji/blob/main/add.png" width=200 height=200>
 
 
 
