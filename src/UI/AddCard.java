@@ -23,12 +23,12 @@ public class AddCard implements ActionListener {
 
     public AddCard() {
         initNewCardFrame();
-        deck.addCard(new Card("hi","bye",1));
-        deck.addCard(new Card("see","you",2));
-        deck.addCard(new Card("lol","lel", 3));
-        deck.addCard(new Card("test","test",1));
-        deck.addCard(new Card("yum","yum",2));
-        deck.addCard(new Card("haha","hahah", 3));
+        deck.addCard(new Card("What is the powerhouse of the cell?","Mitochondria",1));
+        deck.addCard(new Card("How many pairs of chromosomes are stored in human DNA?","23",2));
+        deck.addCard(new Card("What is the purpose of the human appendix?","The appendix replenishes your gut bacteria", 3));
+        deck.addCard(new Card("What is the one body part that CANNOT repair itself?","teeth",3));
+        deck.addCard(new Card("True/False: We only use 10% of the brain","False! We use all parts of the brain but at different times",2));
+        deck.addCard(new Card("What is the lifespan of an average human being?","72.6 years", 1));
         
     }
 
