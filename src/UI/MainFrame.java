@@ -139,7 +139,7 @@ public class MainFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == correct) {
 
-            if (addCard.deck.getDeckCount() == 1 || addCard.deck.getDeckCount() == 1 ) {
+            if (addCard.deck.getDeckCount() == 1 || addCard.deck.getDeckCount() == 0 ) {
                 question.setText("Congratulations! You have completed all the cards in this deck");
                 answer.setText("Add more cards by pressing + symbol");
             }
