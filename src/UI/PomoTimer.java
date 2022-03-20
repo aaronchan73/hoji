@@ -8,10 +8,8 @@ import java.text.DecimalFormat;
 public class PomoTimer {
 
     private Timer timer;
-    private int delay;
-    private int period;
-    private int minutes;
-    private int seconds;
+    private int minutes = 25;
+    private int seconds = 0;
     private String doubleMinutes;
     private String doubleSeconds;
     private boolean on;
@@ -30,16 +28,12 @@ public class PomoTimer {
     }
 
     public void initTimer() {
-        on = false;
+       // on = false;
         decimalFormat = new DecimalFormat("00");
-        delay = 1000;
-        period = 1500000;
-        minutes = 25;
-        seconds = 0;
         timer = new Timer();
         task = new TimerTask() {
             public void run() {
-                if (on) {
+                if(on){
                     seconds--;
                     doubleSeconds = decimalFormat.format(seconds);
                     doubleMinutes = decimalFormat.format(minutes);
@@ -49,6 +43,8 @@ public class PomoTimer {
                     if (seconds == -1) {
                         seconds = 59;
                         minutes--;
+                        doubleSeconds = decimalFormat.format(seconds);
+                        doubleMinutes = decimalFormat.format(minutes);
                         label.setText(doubleMinutes + ":" + doubleSeconds);
                     }
 
@@ -59,7 +55,7 @@ public class PomoTimer {
             }
         };
 
-        timer.schedule(task, delay, period);
+        timer.schedule(task, 2000,2000);
     }
 
     public void setDelay(int delay) {
@@ -70,12 +66,9 @@ public class PomoTimer {
         this.period = period;
     }
 
-    public void stopTimer() {
-        timer.cancel();
-    }
-
     public void startTimer() {
         on = true;
+        initTimer();
     }
 
     public boolean doneTimer() {
