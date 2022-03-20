@@ -2,8 +2,6 @@
 
 *Hoji (保持) - Retention*
 
-A pomodoro-style flashcard app made in Java. 
-
 Hoji is a pomodoro flashcard app allowing users to iterate through a series of flashcards and stimulate memorization of course material. 
 
 ## Welcome Page
