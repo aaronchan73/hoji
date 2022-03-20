@@ -1,11 +1,10 @@
 package UI;
 
-import Sections.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.*;
+import Sections.*;
 
 public class ViewDeck implements ActionListener {
     public JFrame viewDeck;
@@ -27,6 +26,7 @@ public class ViewDeck implements ActionListener {
         viewDeck = new JFrame();
         viewPanel = new JPanel(new GridBagLayout());
         viewDeck.setSize(WIDTH, HEIGHT);
+        viewDeck.add(viewPanel);
     }
 
     public void actionPerformed(ActionEvent e) {
