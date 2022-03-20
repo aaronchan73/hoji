@@ -28,7 +28,6 @@ public class PomoTimer {
     }
 
     public void initTimer() {
-       // on = false;
         decimalFormat = new DecimalFormat("00");
         timer = new Timer();
         task = new TimerTask() {
@@ -56,14 +55,6 @@ public class PomoTimer {
         };
 
         timer.schedule(task, 2000,2000);
-    }
-
-    public void setDelay(int delay) {
-        this.delay = delay;
-    }
-
-    public void setPeriod(int period) {
-        this.period = period;
     }
 
     public void startTimer() {

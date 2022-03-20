@@ -18,13 +18,11 @@ public class StartFrame implements ActionListener {
 
     public JFrame startFrame;
     public JPanel startPanel;
-    // public ViewDeck viewDeck;
     private JButton start;
     private BufferedImage startBackground;
     private JLabel startBackgroundLabel;
     private JLabel welcomeLabel;
     GridBagConstraints c = new GridBagConstraints();
-    // private JLabel d;
 
     public StartFrame() {
         initStartFrame();
@@ -93,9 +91,7 @@ public class StartFrame implements ActionListener {
 
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == start) {
-           // startFrame.setVisible(false);
-          //  viewDeck = new ViewDeck();
-         //   viewDeck.viewDeck.setVisible(true);
+            // 
         }
     }
 

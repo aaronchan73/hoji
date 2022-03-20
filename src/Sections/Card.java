@@ -28,12 +28,4 @@ public class Card {
         return level; 
     }
 
-    // public JSONObject toJson() {
-    //     JSONObject json = new JSONObject();
-    //     json.put("Question", question);
-    //     json.put("Answer", answer);
-    //     json.put("Level", level);
-    //     return json;
-    // }
-
 }

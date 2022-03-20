@@ -5,9 +5,6 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import Sections.*;
-// import org.json.JSONArray;
-// import org.json.JSONObject;
-// import JSON.*;
 import java.io.IOException;
 
 public class MainFrame implements ActionListener {
@@ -20,7 +17,6 @@ public class MainFrame implements ActionListener {
     private JButton correct;
     private JButton wrong;
     private JButton start;
-    //private JButton pause;
     private JButton add;
     public static int WIDTH = 500;
     public static int HEIGHT = 500;
@@ -36,9 +32,6 @@ public class MainFrame implements ActionListener {
 
     private Deck loadedDeck;
     private Card card;
-    private static final String JSON_Save = "./data/data.json";
-    // JsonWriter jsonWriter = new JsonWriter(JSON_Save);
-    // JsonReader jsonReader = new JsonReader(JSON_Save);
 
     AddCard addCard;
 
@@ -51,7 +44,6 @@ public class MainFrame implements ActionListener {
     }
 
     public void initMainFrame() {
-        // loadDeck(); 
         mainFrame = new JFrame();
         mainFrame.setLocationRelativeTo(null);
         mainFrame.setBackground(new Color(52,52,52));
@@ -59,7 +51,6 @@ public class MainFrame implements ActionListener {
         mainPanel = new JPanel();
         mainPanel.setLayout(new GridLayout(3, 1));
         mainPanel.setBackground(new Color(52,52,52));
-        //mainPanel.setForeground(Color.WHITE);
         mainFrame.add(mainPanel);
         mainFrame.setVisible(true);
         mainFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -70,7 +61,6 @@ public class MainFrame implements ActionListener {
         qaPanel = new JPanel();
         qaPanel.setLayout(new GridLayout(2, 1));
         qaPanel.setBackground(new Color(52,52,52));
-        //qaPanel.setForeground(Color.WHITE);
         question = new JLabel(questionString);
         question.setForeground(Color.WHITE);
         answer = new JLabel(answerString);
@@ -130,11 +120,6 @@ public class MainFrame implements ActionListener {
         start.addActionListener(this);
         buttonPanel.add(start);
 
-        // pause = new JButton("Pause");
-        // pause.setSize(new Dimension(300, 300));
-        // pause.addActionListener(this);
-        // buttonPanel.add(pause);
-
         add = new JButton("\u002B");
         add.setSize(new Dimension(300, 300));
         add.addActionListener(this);
@@ -152,12 +137,7 @@ public class MainFrame implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) {
-        // if (!pomo.doneTimer()) {
         if (e.getSource() == correct) {
-            // loadedDeck.removeCard(card);
-            // card = loadedDeck.getNextCard();
-            // questionString = card.getQuestion();
-            // answerString = card.getAnswer();
             addCard.deck.removeCard(card);
             card = addCard.deck.getNextCard();
             questionString = card.getQuestion();
@@ -166,9 +146,6 @@ public class MainFrame implements ActionListener {
             answer.setText(answerString);
             answer.setVisible(false);
         } else if (e.getSource() == wrong) {
-            // card = loadedDeck.getNextCard();
-            // questionString = card.getQuestion();
-            // answerString = card.getAnswer();
             card = addCard.deck.getNextCard();
             questionString = card.getQuestion();
             answerString = card.getAnswer();
@@ -183,7 +160,6 @@ public class MainFrame implements ActionListener {
             mainFrame.setVisible(true);
             addCard.frame.setVisible(true);
         }
-        // }
     }
 
 }

@@ -104,7 +104,6 @@ public class AddCard implements ActionListener {
 
     public void initLabels() {
         questionLabel = new JLabel("Question:");
-        // questionLabel.setFont(new Font("Times New Roman", Font.PLAIN, 14));
         questionLabel.setForeground(Color.WHITE);
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
@@ -112,7 +111,6 @@ public class AddCard implements ActionListener {
         panel.add(questionLabel, c);
 
         answerLabel = new JLabel("Answer: ");
-        // answerLabel.setFont(new Font("Times New Roman", Font.PLAIN, 14));
         answerLabel.setForeground(Color.WHITE);
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
@@ -132,16 +130,6 @@ public class AddCard implements ActionListener {
             
         } 
     }
-    // public void addButtonAction(){
-    // addButton.addActionListener(new ActionListener(){
-    // @Override
-    // public void actionPerformed(ActionEvent e) {
-    // //checkTextFields();
-    // addNewCard();
-    // }
-
-    // });
-    // }
 
     private void errorWindow(String string) {
         JOptionPane.showMessageDialog(errorFrame, string);
@@ -172,9 +160,6 @@ public class AddCard implements ActionListener {
         }
         Card card = new Card(questionField.getText(), answerField.getText(), levelNum);
         deck.addCard(card);
-        // for (int i = 0; i < deck.getDeckCount(); i++) {
-        //     System.out.println(deck.getCard(i));
-        // }
          questionField.setText("");
          answerField.setText("");
     }
