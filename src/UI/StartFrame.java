@@ -16,13 +16,6 @@ public class StartFrame implements ActionListener {
     public static int HEIGHT = 500;
 
     public JFrame startFrame;
-<<<<<<< Updated upstream
-    public ViewDeck viewDeck; 
-    private JButton start; 
-    private BufferedImage startBackground; 
-    private JLabel startBackgroundLabel;
-    private Jlabel d;
-=======
     public JPanel startPanel;
     // public ViewDeck viewDeck;
     private JButton start;
@@ -31,7 +24,6 @@ public class StartFrame implements ActionListener {
     private JLabel welcomeLabel;
     GridBagConstraints c = new GridBagConstraints();
     // private JLabel d;
->>>>>>> Stashed changes
 
     public StartFrame() {
         initStartFrame();
@@ -39,15 +31,6 @@ public class StartFrame implements ActionListener {
 
     public void initStartFrame() {
         startFrame = new JFrame();
-<<<<<<< Updated upstream
-        startFrame.setVisible(true);
-        startFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        startFrame.setSize(WIDTH, HEIGHT); 
-        initStartButtons(); 
-
-        try { // background image 
-            startBackground = ImageIO.read(new File("./startBackground.png"));
-=======
         initPanel();
         startFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         startFrame.setSize(WIDTH, HEIGHT);
@@ -60,33 +43,10 @@ public class StartFrame implements ActionListener {
 
         try { // logo
             startBackground = ImageIO.read(new File("./logotransparent2.png"));
->>>>>>> Stashed changes
         } catch (IOException e) {
             e.printStackTrace();
         }
         startBackgroundLabel = new JLabel(new ImageIcon(startBackground));
-<<<<<<< Updated upstream
-        startBackgroundLabel.setBounds(0, 0, 500, 500); 
-    }
-    
-    public void initStartButtons() { 
-        start = new JButton("Begin customizing your deck");
-        start.setSize(new Dimension(300, 300));
-        start.addActionListener(this);
-        startFrame.add(start); 
-    } 
-
-    public void actionPerformed(ActionEvent e) {
-		if (e.getSource() == start) {
-            startFrame.setVisible(false); 
-            viewDeck = new ViewDeck(); 
-            viewDeck.viewDeck.setVisible(true); 
-	    }
-    }
-
-
-}
-=======
         startBackgroundLabel.setBounds(0, 0, 500, 300);
         c.fill = GridBagConstraints.CENTER;
         c.gridx = 2;
@@ -129,4 +89,3 @@ public class StartFrame implements ActionListener {
 
 
 }
->>>>>>> Stashed changes
